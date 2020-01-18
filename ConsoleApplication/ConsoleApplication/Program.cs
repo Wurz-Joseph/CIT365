@@ -8,10 +8,9 @@ namespace ConsoleApplication
         {
             String name = "Joseph";
             String location = "Texas";
-            DateTime today = DateTime.Today;
+            DateTime today = DateTime.Now;
             DateTime christmas = new DateTime(2020, 12, 25);
             TimeSpan daysRemaining = christmas - today;
-
             Console.WriteLine($"My name is {name}. I am from {location}.");
             Console.WriteLine($"Today is {today.ToString("D")}.");
             Console.WriteLine($"There are {daysRemaining.ToString("%d")} days until Christmas.");
