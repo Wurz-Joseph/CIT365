@@ -25,7 +25,6 @@ namespace MegaDesk_Wurz
             MainMenu viewMainMenu = new MainMenu();
             viewMainMenu.Tag = this;
             viewMainMenu.Show(this);
-            this.Close();
 
         }
     }
