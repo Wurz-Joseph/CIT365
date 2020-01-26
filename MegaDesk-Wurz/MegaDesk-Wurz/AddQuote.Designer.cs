@@ -45,16 +45,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.RadioButtonStandard = new System.Windows.Forms.RadioButton();
             this.MaterialsBox = new System.Windows.Forms.ComboBox();
+            this.DeliveryTypeBox = new System.Windows.Forms.GroupBox();
+            this.DeliveryTypeBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExitButton
             // 
             this.ExitButton.AutoSize = true;
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(574, 12);
+            this.ExitButton.Location = new System.Drawing.Point(601, 490);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(101, 30);
-            this.ExitButton.TabIndex = 0;
+            this.ExitButton.Size = new System.Drawing.Size(101, 40);
+            this.ExitButton.TabIndex = 11;
             this.ExitButton.Text = "Main Menu";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -110,6 +112,8 @@
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(150, 26);
             this.WidthTextBox.TabIndex = 2;
+            this.WidthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthTextBox_KeyPress);
+            this.WidthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.WidthTextBox_Validating);
             // 
             // DepthTextBox
             // 
@@ -118,6 +122,8 @@
             this.DepthTextBox.Name = "DepthTextBox";
             this.DepthTextBox.Size = new System.Drawing.Size(150, 26);
             this.DepthTextBox.TabIndex = 3;
+            this.DepthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DepthTextBox_KeyPress);
+            this.DepthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DepthTextBox_Validating);
             // 
             // DrawersTextBox
             // 
@@ -131,10 +137,10 @@
             // 
             this.GenerateQuoteButton.AutoSize = true;
             this.GenerateQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerateQuoteButton.Location = new System.Drawing.Point(280, 490);
+            this.GenerateQuoteButton.Location = new System.Drawing.Point(313, 490);
             this.GenerateQuoteButton.Name = "GenerateQuoteButton";
             this.GenerateQuoteButton.Size = new System.Drawing.Size(155, 40);
-            this.GenerateQuoteButton.TabIndex = 6;
+            this.GenerateQuoteButton.TabIndex = 10;
             this.GenerateQuoteButton.Text = "Generate Quote";
             this.GenerateQuoteButton.UseVisualStyleBackColor = true;
             this.GenerateQuoteButton.Click += new System.EventHandler(this.GenerateQuoteButton_Click);
@@ -162,10 +168,10 @@
             // 
             this.RadioButton5Day.AutoSize = true;
             this.RadioButton5Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioButton5Day.Location = new System.Drawing.Point(318, 379);
+            this.RadioButton5Day.Location = new System.Drawing.Point(6, 81);
             this.RadioButton5Day.Name = "RadioButton5Day";
             this.RadioButton5Day.Size = new System.Drawing.Size(74, 24);
-            this.RadioButton5Day.TabIndex = 7;
+            this.RadioButton5Day.TabIndex = 8;
             this.RadioButton5Day.TabStop = true;
             this.RadioButton5Day.Text = "5 Day";
             this.RadioButton5Day.UseVisualStyleBackColor = true;
@@ -174,10 +180,10 @@
             // 
             this.RadioButton7Day.AutoSize = true;
             this.RadioButton7Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioButton7Day.Location = new System.Drawing.Point(318, 406);
+            this.RadioButton7Day.Location = new System.Drawing.Point(6, 111);
             this.RadioButton7Day.Name = "RadioButton7Day";
             this.RadioButton7Day.Size = new System.Drawing.Size(74, 24);
-            this.RadioButton7Day.TabIndex = 8;
+            this.RadioButton7Day.TabIndex = 9;
             this.RadioButton7Day.TabStop = true;
             this.RadioButton7Day.Text = "7 Day";
             this.RadioButton7Day.UseVisualStyleBackColor = true;
@@ -186,10 +192,10 @@
             // 
             this.RadioButton3Day.AutoSize = true;
             this.RadioButton3Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioButton3Day.Location = new System.Drawing.Point(318, 352);
+            this.RadioButton3Day.Location = new System.Drawing.Point(6, 51);
             this.RadioButton3Day.Name = "RadioButton3Day";
             this.RadioButton3Day.Size = new System.Drawing.Size(74, 24);
-            this.RadioButton3Day.TabIndex = 9;
+            this.RadioButton3Day.TabIndex = 7;
             this.RadioButton3Day.TabStop = true;
             this.RadioButton3Day.Text = "3 Day";
             this.RadioButton3Day.UseVisualStyleBackColor = true;
@@ -209,34 +215,44 @@
             // 
             this.RadioButtonStandard.AutoSize = true;
             this.RadioButtonStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioButtonStandard.Location = new System.Drawing.Point(318, 325);
+            this.RadioButtonStandard.Location = new System.Drawing.Point(6, 24);
             this.RadioButtonStandard.Name = "RadioButtonStandard";
             this.RadioButtonStandard.Size = new System.Drawing.Size(97, 24);
-            this.RadioButtonStandard.TabIndex = 11;
+            this.RadioButtonStandard.TabIndex = 6;
             this.RadioButtonStandard.TabStop = true;
             this.RadioButtonStandard.Text = "Standard";
             this.RadioButtonStandard.UseVisualStyleBackColor = true;
             // 
             // MaterialsBox
             // 
+            this.MaterialsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaterialsBox.FormattingEnabled = true;
             this.MaterialsBox.Location = new System.Drawing.Point(318, 260);
             this.MaterialsBox.Name = "MaterialsBox";
-            this.MaterialsBox.Size = new System.Drawing.Size(150, 24);
+            this.MaterialsBox.Size = new System.Drawing.Size(150, 28);
             this.MaterialsBox.Sorted = true;
-            this.MaterialsBox.TabIndex = 12;
+            this.MaterialsBox.TabIndex = 5;
+            // 
+            // DeliveryTypeBox
+            // 
+            this.DeliveryTypeBox.Controls.Add(this.RadioButton3Day);
+            this.DeliveryTypeBox.Controls.Add(this.RadioButton5Day);
+            this.DeliveryTypeBox.Controls.Add(this.RadioButtonStandard);
+            this.DeliveryTypeBox.Controls.Add(this.RadioButton7Day);
+            this.DeliveryTypeBox.Location = new System.Drawing.Point(318, 305);
+            this.DeliveryTypeBox.Name = "DeliveryTypeBox";
+            this.DeliveryTypeBox.Size = new System.Drawing.Size(138, 153);
+            this.DeliveryTypeBox.TabIndex = 0;
+            this.DeliveryTypeBox.TabStop = false;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 542);
+            this.ClientSize = new System.Drawing.Size(740, 542);
+            this.Controls.Add(this.DeliveryTypeBox);
             this.Controls.Add(this.MaterialsBox);
-            this.Controls.Add(this.RadioButtonStandard);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.RadioButton3Day);
-            this.Controls.Add(this.RadioButton7Day);
-            this.Controls.Add(this.RadioButton5Day);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.GenerateQuoteButton);
@@ -251,6 +267,8 @@
             this.MaximizeBox = false;
             this.Name = "AddQuote";
             this.Text = "Add Quote";
+            this.DeliveryTypeBox.ResumeLayout(false);
+            this.DeliveryTypeBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +293,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton RadioButtonStandard;
         private System.Windows.Forms.ComboBox MaterialsBox;
+        private System.Windows.Forms.GroupBox DeliveryTypeBox;
     }
 }

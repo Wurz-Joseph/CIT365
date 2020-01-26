@@ -34,9 +34,9 @@
             // ExitButton
             // 
             this.ExitButton.AutoSize = true;
-            this.ExitButton.Location = new System.Drawing.Point(470, 311);
+            this.ExitButton.Location = new System.Drawing.Point(470, 301);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(100, 30);
+            this.ExitButton.Size = new System.Drawing.Size(100, 40);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Main Menu";
             this.ExitButton.UseVisualStyleBackColor = true;

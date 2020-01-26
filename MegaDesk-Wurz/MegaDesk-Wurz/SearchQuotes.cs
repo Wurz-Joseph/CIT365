@@ -21,7 +21,7 @@ namespace MegaDesk_Wurz
         {
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
-            Close();
+            this.Close();
         }
     }
 }

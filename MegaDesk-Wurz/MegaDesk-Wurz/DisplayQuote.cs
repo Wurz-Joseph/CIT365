@@ -12,16 +12,21 @@ namespace MegaDesk_Wurz
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(String name, String total)
         {
             InitializeComponent();
+            NameLabel.Text = name;
+            DateLabel.Text = DateTime.Now.ToString("dd MMMM yyyy");
+            PriceLabel.Text = "$"+total;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            MainMenu viewMainMenu = (MainMenu)Tag;
-            viewMainMenu.Show();
-            Close();
+            MainMenu viewMainMenu = new MainMenu();
+            viewMainMenu.Tag = this;
+            viewMainMenu.Show(this);
+            this.Close();
+
         }
     }
 }
