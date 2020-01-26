@@ -103,6 +103,7 @@
             this.Controls.Add(this.viewQuotesButton);
             this.Controls.Add(this.addNewQuoteButton);
             this.Name = "MainMenu";
+            this.Text = "MegaDesk-Wurz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
