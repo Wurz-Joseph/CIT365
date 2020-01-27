@@ -13,43 +13,56 @@ namespace MegaDesk_Wurz
     public partial class AddQuote : Form
     {
         int delivery = 0;
+        String deliveryString = "";
+        
+        
         public AddQuote()
         {
             InitializeComponent();
-            List<Material> MaterialList = Enum.GetValues(typeof(Material)).Cast<Material>().ToList();
-            MaterialsBox.DataSource = MaterialList;
+            List<Material> MaterialsList = Enum.GetValues(typeof(Material)).Cast<Material>().ToList();
+            MaterialsBox.DataSource = MaterialsList;
+
         }
 
         private void GenerateQuoteButton_Click(object sender, EventArgs e)
         {
             String name = NameTextBox.Text;
+            String widthString = WidthTextBox.Text;
             int width = int.Parse(WidthTextBox.Text);
+            String depthString = DepthTextBox.Text;
             int depth = int.Parse(DepthTextBox.Text);
+            String drawersString = DrawersTextBox.Text;
             int drawers = int.Parse(DrawersTextBox.Text);
+            String materialString = MaterialsBox.SelectedItem.ToString();
             Material selectedMaterial = (Material)Enum.Parse(typeof(Material), MaterialsBox.SelectedItem.ToString());
             int materialCost = (int)selectedMaterial;
 
             if (RadioButton3Day.Checked)
             {
                 delivery = DeskQuote.THREE_DAY_RUSH;
+                deliveryString = "3 Day Rush";
             }
             else if (RadioButton5Day.Checked)
             {
                 delivery = DeskQuote.FIVE_DAY_RUSH;
+                deliveryString = "5 Day Rush";
             }
             else if (RadioButton7Day.Checked)
             {
                 delivery = DeskQuote.SEVEN_DAY_RUSH;
+                deliveryString = "7 Day Rush";
             }
             else
             {
                 delivery = 14;
+                deliveryString = "Standard";
             }
 
 
 
             DeskQuote deskQuote = new DeskQuote(name, DateTime.Now, width, depth, drawers, selectedMaterial, delivery);
-            DisplayQuote showQuote = new DisplayQuote(name, deskQuote.CalcQuoteTotal(materialCost).ToString());
+            String stringQuoteTotal = deskQuote.CalcQuoteTotal(materialCost).ToString();
+            DisplayQuote showQuote = new DisplayQuote(name, widthString, depthString, drawersString, materialString, deliveryString, stringQuoteTotal );
             showQuote.Show();
             this.Close();
 
@@ -61,6 +74,7 @@ namespace MegaDesk_Wurz
             this.Close();
         }
 
+        //Only allow input of numerics
         private void WidthTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -71,28 +85,31 @@ namespace MegaDesk_Wurz
             }
         }
 
+        
         private void WidthTextBox_Validating(object sender, CancelEventArgs e)
         {
-
-            if (String.IsNullOrEmpty(WidthTextBox.Text))
+            if (WidthTextBox.Text != "")
             {
-                e.Cancel = true;
-                WidthTextBox.Focus();
+                try
+                {
+                    int tryWidth = Convert.ToInt32(WidthTextBox.Text);
+                    if (tryWidth < Desk.MIN_WIDTH || tryWidth > Desk.MAX_WIDTH)
+                    {
+                        MessageBox.Show($"Width must be between {Desk.MIN_WIDTH} and {Desk.MAX_WIDTH} inches.");
+                        WidthTextBox.Text = "";
+                        e.Cancel = true;
+                        WidthTextBox.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        WidthTextBox.BackColor = Color.LightGreen;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error");
+                }
             }
-
-            if (int.Parse(WidthTextBox.Text) < Desk.MIN_WIDTH || int.Parse(WidthTextBox.Text) > Desk.MAX_WIDTH)
-            {
-                MessageBox.Show($"Width must be between {Desk.MIN_WIDTH} AND {Desk.MAX_WIDTH} inches.");
-                WidthTextBox.BackColor = Color.Red;
-                e.Cancel = true;
-                WidthTextBox.Text = "";
-                WidthTextBox.Focus();
-            }
-            else
-            {
-                WidthTextBox.BackColor = Color.LightGreen;
-            }
-
 
         }
 
@@ -106,22 +123,55 @@ namespace MegaDesk_Wurz
             }
         }
 
-
-
         private void DepthTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (int.Parse(DepthTextBox.Text) < Desk.MIN_DEPTH || int.Parse(DepthTextBox.Text) > Desk.MAX_DEPTH)
+            if (DepthTextBox.Text != "")
             {
-                MessageBox.Show($"Depth must be between {Desk.MIN_DEPTH} AND {Desk.MAX_DEPTH} inches.");
-                DepthTextBox.BackColor = Color.Red;
-                e.Cancel = true;
-                DepthTextBox.Text = "";
-                DepthTextBox.Focus();
+                try
+                {
+                    int tryDepth = Convert.ToInt32(DepthTextBox.Text);
+                    if (tryDepth < Desk.MIN_DEPTH || tryDepth > Desk.MAX_DEPTH)
+                    {
+                        MessageBox.Show($"Depth must be between {Desk.MIN_WIDTH} and {Desk.MAX_WIDTH} inches.");
+                        DepthTextBox.Text = "";
+                        e.Cancel = true;
+                        DepthTextBox.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        DepthTextBox.BackColor = Color.LightGreen;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error");
+                }
             }
-            else
-            {
-                DepthTextBox.BackColor = Color.LightGreen;
+        }
 
+        private void DrawersTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (DrawersTextBox.Text != "")
+            {
+                try
+                {
+                    int tryDrawers = Convert.ToInt32(DrawersTextBox.Text);
+                    if (tryDrawers > 7)
+                    {
+                        MessageBox.Show($"You can have a maximum of 7 Drawers.");
+                        DrawersTextBox.Text = "";
+                        e.Cancel = true;
+                        DrawersTextBox.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        DrawersTextBox.BackColor = Color.LightGreen;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error!");
+                }
             }
         }
     }

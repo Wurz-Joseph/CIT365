@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_Wurz
 {
-    public class DeskQuote
+    class DeskQuote
     {
         public String CustomerName { get; set; }
         public DateTime QuoteDate { get; set; }
         public int DeliveryOption { get; set; }
         public double QuoteTotal { get; set; }
-        public Desk desk = new Desk();
+        Desk desk = new Desk();
 
         public int surfaceArea = 0;
         public const int BASE_PRICE = 200;
         public const int PRICE_PER_DRAWER = 50;
-        public const int ADDED_SURFACE_PRICE = 1;
         public const int THREE_DAY_RUSH = 3;
         public const int FIVE_DAY_RUSH = 5;
         public const int SEVEN_DAY_RUSH = 7;

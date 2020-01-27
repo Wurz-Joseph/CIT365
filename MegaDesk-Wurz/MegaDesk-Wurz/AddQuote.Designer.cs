@@ -53,10 +53,10 @@
             // 
             this.ExitButton.AutoSize = true;
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(601, 490);
+            this.ExitButton.Location = new System.Drawing.Point(440, 486);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(101, 40);
-            this.ExitButton.TabIndex = 11;
+            this.ExitButton.TabIndex = 8;
             this.ExitButton.Text = "Main Menu";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 75);
+            this.label1.Location = new System.Drawing.Point(132, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 0;
@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(242, 135);
+            this.label2.Location = new System.Drawing.Point(131, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 0;
@@ -87,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 195);
+            this.label3.Location = new System.Drawing.Point(16, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 25);
             this.label3.TabIndex = 0;
@@ -98,7 +98,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(225, 259);
+            this.label4.Location = new System.Drawing.Point(114, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 0;
@@ -108,7 +108,7 @@
             // WidthTextBox
             // 
             this.WidthTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WidthTextBox.Location = new System.Drawing.Point(318, 74);
+            this.WidthTextBox.Location = new System.Drawing.Point(207, 70);
             this.WidthTextBox.Name = "WidthTextBox";
             this.WidthTextBox.Size = new System.Drawing.Size(150, 26);
             this.WidthTextBox.TabIndex = 2;
@@ -118,7 +118,7 @@
             // DepthTextBox
             // 
             this.DepthTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DepthTextBox.Location = new System.Drawing.Point(318, 134);
+            this.DepthTextBox.Location = new System.Drawing.Point(207, 130);
             this.DepthTextBox.Name = "DepthTextBox";
             this.DepthTextBox.Size = new System.Drawing.Size(150, 26);
             this.DepthTextBox.TabIndex = 3;
@@ -128,19 +128,20 @@
             // DrawersTextBox
             // 
             this.DrawersTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DrawersTextBox.Location = new System.Drawing.Point(318, 194);
+            this.DrawersTextBox.Location = new System.Drawing.Point(207, 190);
             this.DrawersTextBox.Name = "DrawersTextBox";
             this.DrawersTextBox.Size = new System.Drawing.Size(150, 26);
             this.DrawersTextBox.TabIndex = 4;
+            this.DrawersTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DrawersTextBox_Validating);
             // 
             // GenerateQuoteButton
             // 
             this.GenerateQuoteButton.AutoSize = true;
             this.GenerateQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerateQuoteButton.Location = new System.Drawing.Point(313, 490);
+            this.GenerateQuoteButton.Location = new System.Drawing.Point(202, 486);
             this.GenerateQuoteButton.Name = "GenerateQuoteButton";
             this.GenerateQuoteButton.Size = new System.Drawing.Size(155, 40);
-            this.GenerateQuoteButton.TabIndex = 10;
+            this.GenerateQuoteButton.TabIndex = 7;
             this.GenerateQuoteButton.Text = "Generate Quote";
             this.GenerateQuoteButton.UseVisualStyleBackColor = true;
             this.GenerateQuoteButton.Click += new System.EventHandler(this.GenerateQuoteButton_Click);
@@ -148,7 +149,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextBox.Location = new System.Drawing.Point(318, 16);
+            this.NameTextBox.Location = new System.Drawing.Point(207, 12);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(150, 26);
             this.NameTextBox.TabIndex = 1;
@@ -157,7 +158,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(152, 17);
+            this.label5.Location = new System.Drawing.Point(41, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 25);
             this.label5.TabIndex = 0;
@@ -172,7 +173,6 @@
             this.RadioButton5Day.Name = "RadioButton5Day";
             this.RadioButton5Day.Size = new System.Drawing.Size(74, 24);
             this.RadioButton5Day.TabIndex = 8;
-            this.RadioButton5Day.TabStop = true;
             this.RadioButton5Day.Text = "5 Day";
             this.RadioButton5Day.UseVisualStyleBackColor = true;
             // 
@@ -184,7 +184,6 @@
             this.RadioButton7Day.Name = "RadioButton7Day";
             this.RadioButton7Day.Size = new System.Drawing.Size(74, 24);
             this.RadioButton7Day.TabIndex = 9;
-            this.RadioButton7Day.TabStop = true;
             this.RadioButton7Day.Text = "7 Day";
             this.RadioButton7Day.UseVisualStyleBackColor = true;
             // 
@@ -196,7 +195,6 @@
             this.RadioButton3Day.Name = "RadioButton3Day";
             this.RadioButton3Day.Size = new System.Drawing.Size(74, 24);
             this.RadioButton3Day.TabIndex = 7;
-            this.RadioButton3Day.TabStop = true;
             this.RadioButton3Day.Text = "3 Day";
             this.RadioButton3Day.UseVisualStyleBackColor = true;
             // 
@@ -204,7 +202,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(169, 323);
+            this.label6.Location = new System.Drawing.Point(64, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 25);
             this.label6.TabIndex = 10;
@@ -214,6 +212,7 @@
             // RadioButtonStandard
             // 
             this.RadioButtonStandard.AutoSize = true;
+            this.RadioButtonStandard.Checked = true;
             this.RadioButtonStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RadioButtonStandard.Location = new System.Drawing.Point(6, 24);
             this.RadioButtonStandard.Name = "RadioButtonStandard";
@@ -227,7 +226,7 @@
             // 
             this.MaterialsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaterialsBox.FormattingEnabled = true;
-            this.MaterialsBox.Location = new System.Drawing.Point(318, 260);
+            this.MaterialsBox.Location = new System.Drawing.Point(207, 256);
             this.MaterialsBox.Name = "MaterialsBox";
             this.MaterialsBox.Size = new System.Drawing.Size(150, 28);
             this.MaterialsBox.Sorted = true;
@@ -239,17 +238,17 @@
             this.DeliveryTypeBox.Controls.Add(this.RadioButton5Day);
             this.DeliveryTypeBox.Controls.Add(this.RadioButtonStandard);
             this.DeliveryTypeBox.Controls.Add(this.RadioButton7Day);
-            this.DeliveryTypeBox.Location = new System.Drawing.Point(318, 305);
+            this.DeliveryTypeBox.Location = new System.Drawing.Point(207, 301);
             this.DeliveryTypeBox.Name = "DeliveryTypeBox";
             this.DeliveryTypeBox.Size = new System.Drawing.Size(138, 153);
-            this.DeliveryTypeBox.TabIndex = 0;
+            this.DeliveryTypeBox.TabIndex = 6;
             this.DeliveryTypeBox.TabStop = false;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 542);
+            this.ClientSize = new System.Drawing.Size(595, 555);
             this.Controls.Add(this.DeliveryTypeBox);
             this.Controls.Add(this.MaterialsBox);
             this.Controls.Add(this.label6);
