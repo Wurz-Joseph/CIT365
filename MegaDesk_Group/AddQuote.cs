@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Helpers;
 using Newtonsoft.Json;
 using System.IO;
+using System.Web.Script.Serialization;
 
 namespace MegaDesk
 {
@@ -19,21 +20,60 @@ namespace MegaDesk
         DeskQuote DeskQuote = new DeskQuote();
         Desk Desk = new Desk();
         public List<DeskQuote> quoteCollection = new List<DeskQuote>();
+        string[,] rushOrder = new string[3, 3];
 
         public AddQuote()
         {
             InitializeComponent();
-
-            //import json file. Deserialize into a list of DeskQuote objects
             materialInput.DataSource = Enum.GetValues(typeof(Desk.Materials));
-            String jsonFile = "quote.json";
+            String jsonFile = DeskQuote.filepath;
             if (File.Exists(jsonFile))
             {
-                String rawJson = File.ReadAllText("quote.json");
+                String rawJson = File.ReadAllText(DeskQuote.filepath);
+                if (rawJson.Contains("}{"))
+                    rawJson = rawJson.Replace("}{", "},{");
+                if (!rawJson.Contains("[") && rawJson.Contains(","))
+                {
+                    rawJson = "[" + rawJson + "]";
+                };
                 quoteCollection = JsonConvert.DeserializeObject<List<DeskQuote>>(rawJson);
+
+
+                try
+                {
+                    rushOrder = PullRushPrices();
+                }
+                catch (Exception)
+                {
+                    MainMenu viewMenu = (MainMenu)Tag;
+                    Close();
+                }
             }
         }
 
+        private string[,] PullRushPrices()
+        {
+            string[] lines = File.ReadAllLines(DeskQuote.rushOrderPrices);
+            string[,] rushprices = new string[3, 3];
+            int y = 0;
+            int z = 0;
+            foreach (string line in lines)
+            {
+                lines[y] = line;
+                y++;
+            }
+
+            for (int x = 0; x < 3; x++)
+            {
+                for (y = 0; y < 3; y++)
+                {
+                    rushprices[x, y] = lines[z];
+                    z++;
+                }
+            }
+            return rushprices;
+
+        }
 
         public int GetDepth() { return Int32.Parse(depthInput.Text); }
         public int GetWidth() { return Int32.Parse(widthInput.Text); }
@@ -106,7 +146,7 @@ namespace MegaDesk
             areaCost.Text =
                 DeskQuote.AreaCost(depth, width).ToString("C2");
             shippingCost.Text =
-                DeskQuote.ShippingCost(shippingInput.Text, DeskQuote.AreaCalculate(depth, width)).ToString("C2");
+                DeskQuote.ShippingCost(shippingInput.Text, DeskQuote.AreaCalculate(depth, width), PullRushPrices()).ToString("C2");
             materialCost.Text =
                 Desk.DeskMaterialCost(materialInput.Text).ToString("C2");
 
@@ -162,7 +202,7 @@ namespace MegaDesk
 
             area = DeskQuote.AreaCost(GetDepth(), GetWidth());
             drawers = Int32.Parse(drawerInput.Text) * 50;
-            shipping = DeskQuote.ShippingCost(shippingInput.Text, area);
+            shipping = DeskQuote.ShippingCost(shippingInput.Text, area, PullRushPrices());
             materials = Desk.DeskMaterialCost(materialInput.Text);
 
             int total = (area + drawers + shipping + materials);
@@ -185,11 +225,9 @@ namespace MegaDesk
 
             if (val)
             {
-                //ShowDialog("Will be implemented next week!");
                 DeskQuote DeskQuoteParse = new DeskQuote();
 
                 DeskQuoteParse.id = Guid.NewGuid();
-                //Changed from .Today to .Now so it sends time of day with date to json file.
                 DeskQuoteParse.date = DateTime.Now;
                 DeskQuoteParse.depth = Int32.Parse(depthInput.Text);
                 DeskQuoteParse.width = Int32.Parse(widthInput.Text);
@@ -198,24 +236,23 @@ namespace MegaDesk
                 DeskQuoteParse.area = Int32.Parse(depthInput.Text) * Int32.Parse(widthInput.Text);
                 DeskQuoteParse.areaCost = DeskQuote.AreaCost(Int32.Parse(depthInput.Text), Int32.Parse(widthInput.Text));
                 DeskQuoteParse.material = materialInput.Text;
-
                 DeskQuoteParse.materialCost = Desk.DeskMaterialCost(materialInput.Text);
                 DeskQuoteParse.customerName = nameInput.Text;
                 DeskQuoteParse.rush = shippingInput.Text;
-                DeskQuoteParse.shippingCost = DeskQuote.ShippingCost(shippingInput.Text, DeskQuoteParse.area);
+                DeskQuoteParse.shippingCost = DeskQuote.ShippingCost(shippingInput.Text, DeskQuoteParse.area, PullRushPrices());
                 DeskQuoteParse.quote = (DeskQuoteParse.areaCost + DeskQuoteParse.drawerCost + DeskQuoteParse.shippingCost + DeskQuoteParse.materialCost);
 
-                var json = JsonConvert.SerializeObject(DeskQuoteParse);
+                string json = JsonConvert.SerializeObject(DeskQuoteParse);
 
                 if (json != null && json != "")
                 {
+                    DeskQuote.SaveToFile(DeskQuoteParse);
                     SubmitQuote(json);
                 }
-
-                quoteCollection.Add(DeskQuoteParse);
-                SaveToFile(quoteCollection);
             }
         }
+
+
 
         private void ShowDialog(string v)
         {
@@ -237,17 +274,6 @@ namespace MegaDesk
             MainMenu viewMenu = (MainMenu)Tag;
             viewMenu.navShowQuote_ref(json);
             Close();
-        }
-
-        public void SaveToFile(List<DeskQuote> json)
-        {
-            //open file stream
-            using (StreamWriter file = File.CreateText("quote.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
-                serializer.Serialize(file, json);
-            }
         }
     }
 }
