@@ -12,10 +12,22 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Deskquote.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Deskquote.ID)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Deskquote.Date)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Deskquote.Date)
+        </dd>
+        <dt class="col-sm-2">
+            Customer Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Deskquote.CustomerName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Deskquote.Depth)
@@ -36,7 +48,7 @@
             @Html.DisplayFor(model => model.Deskquote.Drawers)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.DrawerCost)
+            Drawer Cost
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Deskquote.DrawerCost)
@@ -48,22 +60,10 @@
             @Html.DisplayFor(model => model.Deskquote.Area)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.AreaCost)
+            Area Cost
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Deskquote.AreaCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.MaterialCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Deskquote.MaterialCost)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.ShippingCost)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Deskquote.ShippingCost)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Deskquote.Material)
@@ -72,22 +72,28 @@
             @Html.DisplayFor(model => model.Deskquote.Material)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.CustomerName)
+            Material Cost
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Deskquote.CustomerName)
+            @Html.DisplayFor(model => model.Deskquote.MaterialCost)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Deskquote.Quote)
+            Shipping Cost
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Deskquote.Quote)
+            @Html.DisplayFor(model => model.Deskquote.ShippingCost)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Deskquote.Rush)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Deskquote.Rush)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Deskquote.Quote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Deskquote.Quote)
         </dd>
     </dl>
 </div>
