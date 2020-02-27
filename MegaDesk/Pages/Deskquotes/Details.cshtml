@@ -26,38 +26,24 @@
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            Customer Name
+            @Html.LabelFor(model => model.Deskquote.CustomerName, "Customer Name")
         </dt>
         <dd class="col-sm-10 twothird">
             @Html.DisplayFor(model => model.Deskquote.CustomerName)
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            @Html.DisplayNameFor(model => model.Deskquote.Depth)
+            @Html.LabelFor(model => model.Deskquote.Depth, "Depth")
         </dt>
         <dd class="col-sm-10 twothird">
             @Html.DisplayFor(model => model.Deskquote.Depth)
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            @Html.DisplayNameFor(model => model.Deskquote.Width)
+            @Html.LabelFor(model => model.Deskquote.Width, "Width")
         </dt>
         <dd class="col-sm-10 twothird">
             @Html.DisplayFor(model => model.Deskquote.Width)
-        </dd>
-        <br />
-        <dt class="col-sm-2 onethird">
-            @Html.DisplayNameFor(model => model.Deskquote.Drawers)
-        </dt>
-        <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.Drawers)
-        </dd>
-        <br />
-        <dt class="col-sm-2 onethird">
-            Drawer Cost
-        </dt>
-        <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.DrawerCost)
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
@@ -68,10 +54,10 @@
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            Area Cost
+            @Html.DisplayNameFor(model => model.Deskquote.Drawers)
         </dt>
         <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.AreaCost)
+            @Html.DisplayFor(model => model.Deskquote.Drawers)
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
@@ -82,31 +68,53 @@
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            Material Cost
-        </dt>
-        <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.MaterialCost)
-        </dd>
-        <br />
-        <dt class="col-sm-2 onethird">
-            Shipping Cost
-        </dt>
-        <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.ShippingCost)
-        </dd>
-        <br />
-        <dt class="col-sm-2 onethird">
-            @Html.DisplayNameFor(model => model.Deskquote.Rush)
+            @Html.LabelFor(model => model.Deskquote.Rush, "Shipping")
         </dt>
         <dd class="col-sm-10 twothird">
             @Html.DisplayFor(model => model.Deskquote.Rush)
         </dd>
         <br />
         <dt class="col-sm-2 onethird">
-            @Html.DisplayNameFor(model => model.Deskquote.Quote)
+            Base Price
         </dt>
         <dd class="col-sm-10 twothird">
-            @Html.DisplayFor(model => model.Deskquote.Quote)
+            $200
+        </dd>
+        <br />
+        <dt class="col-sm-2 onethird">
+            @Html.LabelFor(model => model.Deskquote.AreaCost, "Area Cost")
+        </dt>
+        <dd class="col-sm-10 twothird">
+            $@Html.DisplayFor(model => model.Deskquote.AreaCost)
+        </dd>
+        <br />
+        <dt class="col-sm-2 onethird">
+            @Html.LabelFor(model => model.Deskquote.DrawerCost, "Drawer Cost")
+        </dt>
+        <dd class="col-sm-10 twothird">
+            $@Html.DisplayFor(model => model.Deskquote.DrawerCost)
+        </dd>
+        <br />
+        <dt class="col-sm-2 onethird">
+            @Html.LabelFor(model => model.Deskquote.MaterialCost, "Material Cost")
+
+        </dt>
+        <dd class="col-sm-10 twothird">
+            $@Html.DisplayFor(model => model.Deskquote.MaterialCost)
+        </dd>
+        <br />
+        <dt class="col-sm-2 onethird">
+            @Html.LabelFor(model => model.Deskquote.ShippingCost, "Shipping Cost")
+        </dt>
+        <dd class="col-sm-10 twothird">
+            $@Html.DisplayFor(model => model.Deskquote.ShippingCost)
+        </dd>
+        <br />
+        <dt class="col-sm-2 onethird">
+            @Html.LabelFor(model => model.Deskquote.Quote, "Quote Total")
+        </dt>
+        <dd class="col-sm-10 twothird">
+            $@Html.DisplayFor(model => model.Deskquote.Quote)
         </dd>
     </dl>
 </div>
