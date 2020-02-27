@@ -10,16 +10,26 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Search for Customer Name: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Deskquote[0].Date)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Deskquote[0].Date)
+                </a>
             </th>
             <th>
-                Customer Name
-            </th>
-            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Deskquote[0].CustomerName)
+                </a>>
+<th>
                 @Html.DisplayNameFor(model => model.Deskquote[0].Drawers)
             </th>
             
