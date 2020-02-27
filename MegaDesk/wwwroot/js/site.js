@@ -6,5 +6,5 @@
 function imgChange(e) {
 
     var value = e.value;
-    document.getElementById("materialSwap").style.backgroundImage = "url('../images/mat/"+value +".jpg')" 
+    document.getElementById("Materials").style.backgroundImage = "url('../images/mat/"+value +".jpg')" 
 }
