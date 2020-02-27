@@ -21,7 +21,6 @@ namespace MegaDesk.Models
         [DisplayName("Width (24-96)")]
         public int Width { get; set; }
         [RegularExpression(@"^[0-7]", ErrorMessage = "A range of 0-7 is required")]
-        [DisplayName("Width (0-7)")]
         public int Drawers { get; set; }
         public int DrawerCost { get; set; }
         public int Area { get; set; }
