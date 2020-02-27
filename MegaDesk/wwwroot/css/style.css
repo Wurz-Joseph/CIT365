@@ -63,7 +63,7 @@ nav li {
 
 nav a:link,
 nav a:visited {
-  color: #07162e;
+  color: white;
   text-decoration: none;
   border-top: 5px solid transparent;
   -webkit-transition: 0.5s;
@@ -161,7 +161,8 @@ table {
   max-width: 1080px;
 }
 
-input {
+input,
+select {
   margin: 0px 0px;
   padding: 4px;
   background-color: #fff;
@@ -171,8 +172,7 @@ input {
 
 button,
 .btn-primary {
-  margin: auto;
-  width: 60%;
+  width: 150px;
   padding: 10px;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -191,9 +191,40 @@ button:hover,
   transition: 0.5s;
 }
 
+.btn-small {
+  width: 75px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background: #004906;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-small:hover {
+  background: #007018;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .navbar-brand {
   position: relative;
   top: -15px;
+}
+
+.imgside {
+  background-image: url("../images/mat/oak.jpg");
+  position: relative;
+  top: -285px;
+  left: -180px;
+  content: "";
+  width: 210px;
+  height: 210px;
+  border: 1px solid gray;
+  float: right;
 }
 
 html {
@@ -239,7 +270,7 @@ header img {
 }
 
 .twothird {
-  width: 60%;
+  width: 400px;
 }
 
 .Create,
