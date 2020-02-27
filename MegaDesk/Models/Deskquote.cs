@@ -13,10 +13,10 @@ namespace MegaDesk.Models
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         [Required(ErrorMessage = "Depth is required")]
-        [RegularExpression(@"^[1-4][2-8]", ErrorMessage = "A range of 12-48 is required")]
+       
         [DisplayName("Depth (12-48)")]
         public int Depth { get; set; }
-        [RegularExpression(@"^[2-9][4-6]", ErrorMessage = "A range of 24-96 is required")]
+        
         [Required(ErrorMessage = "Width is required")]
         [DisplayName("Width (24-96)")]
         public int Width { get; set; }
