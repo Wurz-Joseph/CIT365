@@ -12,15 +12,18 @@ namespace MegaDesk.Models
         public Guid ID { get; set; }
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+
         [Required(ErrorMessage = "Depth is required")]
-       
         [DisplayName("Depth (12-48)")]
+        [Range(12, 48, ErrorMessage = "Acceptable range (12-48)")]
         public int Depth { get; set; }
         
         [Required(ErrorMessage = "Width is required")]
         [DisplayName("Width (24-96)")]
+        [Range(24, 96, ErrorMessage = "Acceptable range (24-96)")]
         public int Width { get; set; }
-        [RegularExpression(@"^[0-7]", ErrorMessage = "A range of 0-7 is required")]
+       
+        [Range(0, 7, ErrorMessage = "Acceptable range (0-7)")]
         public int Drawers { get; set; }
         public int DrawerCost { get; set; }
         public int Area { get; set; }

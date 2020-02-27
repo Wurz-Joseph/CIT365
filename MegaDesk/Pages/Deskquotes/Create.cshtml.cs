@@ -39,8 +39,10 @@ namespace MegaDesk
 
             Deskquote.Area = Deskquote.CalculateArea();
             Deskquote.AreaCost = Deskquote.CalculateAreaCost();
+
             Deskquote.Material = Request.Form["material"];
             Deskquote.MaterialCost = Deskquote.CalculateMaterialCost(Deskquote.Material);
+
             Deskquote.DrawerCost = Deskquote.Drawers * Deskquote.COST_PER_DRAWER;
             Deskquote.Rush = Request.Form["rush"];
             Deskquote.ShippingCost = Deskquote.CalculateShippingCost(Deskquote.Rush, Deskquote.Area);
