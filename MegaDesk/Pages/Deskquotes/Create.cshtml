@@ -38,7 +38,6 @@
                 <input asp-for="Deskquote.Drawers" class="form-control twothird" />
                 <span asp-validation-for="Deskquote.Drawers" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Deskquote.Material" class="control-label onethird"></label>
                 <select id="Materials" class="form-control twothird" onchange="imgChange(this)">
@@ -51,10 +50,10 @@
                 <!--<input asp-for="Deskquote.Material" class="form-control twothird" />-->
                 <span asp-validation-for="Deskquote.Material" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Deskquote.Rush" class="control-label onethird"></label>
                 <select id="Rush" class="form-control twothird">
+                    <option value="standard">Standard</option>
                     <option value="3day">3 Day</option>
                     <option value="5day">5 Day</option>
                     <option value="7day">7 Day</option>
@@ -65,7 +64,6 @@
             <div class="form-group middle">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <div class="imgside" id="materialSwap"></div>
         </form>
     </div>
 </div>
