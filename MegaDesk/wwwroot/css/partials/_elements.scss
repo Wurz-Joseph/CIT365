@@ -1,0 +1,194 @@
+.button {
+    padding: 3px 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.article {
+    padding: 20px;
+
+    h2 {
+        margin: 0px;
+
+        span {
+            display: block;
+            font-size: .75em;
+            font-weight: normal;
+        }
+    }
+
+    .button:link,
+    .button:visited {
+        border: 2pt solid $blurb;
+        color: $blurb;
+        transition: .5s;
+    }
+
+    .button:hover {
+        background: $blurb;
+        color: white;
+        padding: 3px 10px;
+    }
+
+    .button:active {
+        text-decoration: underline;
+    }
+}
+
+.blurb.article {
+    background-color: $blurb;
+    color: white;
+
+    .button:link,
+    .button:visited {
+        border: 2pt solid white;
+        color: white;
+        transition: .5s;
+    }
+
+    .button:hover {
+        background-color: white;
+        color: $blurb;
+    }
+}
+
+#logo {
+    max-height: 65px;
+    width: auto;
+}
+
+#top-image {
+    .center {
+        padding: 170px 2%;
+
+        p,
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 3px black;
+            max-width: 500px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.slider {
+
+    background-image: url("../images/godo.jpg");
+    background-size: cover;
+    background-position: center center;
+
+    .textbanner {
+        height: 355px;
+        color: white;
+        display: inline-block;
+        width: 100%;
+
+        p {
+            text-align: center;
+            vertical-align: bottom;
+            background: rgba($color: $blurb, $alpha: 0.7);
+            padding: 10px 20px;
+            margin: 290px 0 0 0;
+        }
+
+        a:link,
+        a:visited {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: 0.5s;
+        }
+
+        a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        a:active {
+            border-bottom: 5px solid white;
+        }
+    }
+}
+
+#toggle,
+nav label {
+    display: none;
+}
+
+.box-shad {
+    padding: 10px 20px;
+    background: rgba($color: black, $alpha: 0.4);
+    max-width: 500px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table {
+    margin-bottom: 150px;
+}
+
+.tablegap {
+    margin: 20px 0;
+}
+
+.middle {
+    display: flex;
+    align-self: center;
+}
+
+.fullWide {
+    width: 100%;
+    max-width: 1080px;
+}
+
+input {
+    margin: 0px 0px;
+    padding: 4px;
+    background-color: #fff;
+    border: 1pt solid #dedede;
+    border-radius: 2px;
+}
+
+button,
+.btn-primary {
+    margin: auto;
+    width: 535px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background: #000;
+    transition: 0.5s;
+}
+
+button:hover,
+.btn-primary:hover {
+    background: #444;
+    transition: 0.5s;
+}
+
+.navbar-brand {
+    position: relative;
+    top: -15px;
+}

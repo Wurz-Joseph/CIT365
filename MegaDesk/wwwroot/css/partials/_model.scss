@@ -1,0 +1,43 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+header,
+main,
+.center {
+    max-width: 1080px;
+    margin: auto;
+}
+
+header img {
+    float: left;
+}
+
+.row {
+    font-size: 0px;
+}
+
+.row>* {
+    font-size: 1rem;
+}
+
+.twothird,
+.onethird {
+    vertical-align: top;
+    display: inline-block;
+    margin: 5px 2%;
+}
+
+.onethird {
+    width: 150px;
+}
+
+.twothird {
+    width: 60%;
+}

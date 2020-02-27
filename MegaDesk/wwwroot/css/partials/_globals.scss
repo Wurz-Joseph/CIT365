@@ -1,0 +1,45 @@
+/* Globals */
+@import url("https://use.typekit.net/vbg7won.css");
+
+body {
+    margin: 20px 0px 0px 0px;
+    font-family: lato, sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+
+}
+
+footer {
+    margin-top: 100px;
+    padding: 10px;
+    background-color: $footer;
+    color: $footertext;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Helvetica', sans-serif;
+
+    span {
+        font-size: 80%;
+    }
+}
+
+strong {
+    font-weight: 900;
+    font-size: 110%;
+}
