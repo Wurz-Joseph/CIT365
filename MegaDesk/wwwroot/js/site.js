@@ -2,3 +2,9 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+
+function imgChange(e) {
+
+    var value = e.value;
+    document.getElementById("materialSwap").style.backgroundImage = "url('../images/mat/"+value +".jpg')" 
+}
