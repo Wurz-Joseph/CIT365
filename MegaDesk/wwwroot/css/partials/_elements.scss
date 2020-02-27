@@ -4,59 +4,6 @@
     display: inline-block;
 }
 
-.article {
-    padding: 20px;
-
-    h2 {
-        margin: 0px;
-
-        span {
-            display: block;
-            font-size: .75em;
-            font-weight: normal;
-        }
-    }
-
-    .button:link,
-    .button:visited {
-        border: 2pt solid $blurb;
-        color: $blurb;
-        transition: .5s;
-    }
-
-    .button:hover {
-        background: $blurb;
-        color: white;
-        padding: 3px 10px;
-    }
-
-    .button:active {
-        text-decoration: underline;
-    }
-}
-
-.blurb.article {
-    background-color: $blurb;
-    color: white;
-
-    .button:link,
-    .button:visited {
-        border: 2pt solid white;
-        color: white;
-        transition: .5s;
-    }
-
-    .button:hover {
-        background-color: white;
-        color: $blurb;
-    }
-}
-
-#logo {
-    max-height: 65px;
-    width: auto;
-}
-
 #top-image {
     .center {
         padding: 170px 2%;
@@ -71,44 +18,6 @@
         a {
             text-decoration: none;
             color: white;
-        }
-    }
-}
-
-.slider {
-
-    background-image: url("../images/godo.jpg");
-    background-size: cover;
-    background-position: center center;
-
-    .textbanner {
-        height: 355px;
-        color: white;
-        display: inline-block;
-        width: 100%;
-
-        p {
-            text-align: center;
-            vertical-align: bottom;
-            background: rgba($color: $blurb, $alpha: 0.7);
-            padding: 10px 20px;
-            margin: 290px 0 0 0;
-        }
-
-        a:link,
-        a:visited {
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: 0.5s;
-        }
-
-        a:hover {
-            border-bottom: 2px solid white;
-        }
-
-        a:active {
-            border-bottom: 5px solid white;
         }
     }
 }
@@ -161,7 +70,8 @@ table {
     max-width: 1080px;
 }
 
-input {
+input,
+select {
     margin: 0px 0px;
     padding: 4px;
     background-color: #fff;
@@ -171,10 +81,10 @@ input {
 
 button,
 .btn-primary {
-    margin: auto;
-    width: 535px;
+    width: $onethird;
     padding: 10px;
     margin-bottom: 5px;
+    margin-top: 30px;
     border: 0;
     border-radius: 5px;
     color: white;
@@ -185,6 +95,23 @@ button,
 button:hover,
 .btn-primary:hover {
     background: #444;
+    transition: 0.5s;
+}
+
+.btn-small {
+    width: $onethird/2;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background: rgb(0, 73, 6);
+    transition: 0.5s;
+}
+
+.btn-small:hover {
+    background: rgb(0, 112, 24);
     transition: 0.5s;
 }
 

@@ -16,7 +16,8 @@
     background-image: url("../images/create.jpg");
 }
 
-.Home {
+.Home,
+.Privacy {
     @include background();
     background-image: url("../images/list.jpg");
 }
