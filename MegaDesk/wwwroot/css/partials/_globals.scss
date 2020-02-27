@@ -2,8 +2,9 @@
 @import url("https://use.typekit.net/vbg7won.css");
 
 body {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 50px 0px;
     font-family: lato, sans-serif;
+    padding-bottom: 80px;
 }
 
 html {
@@ -11,19 +12,23 @@ html {
     min-height: 100%;
 }
 
+main {
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+}
+
 .footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
     line-height: 60px;
-
 }
 
 footer {
     margin-top: 100px;
     padding: 10px;
-    background-color: $footer;
+    background-color: rgba($color: $footer, $alpha: 0.97);
     color: $footertext;
     text-align: center;
 }
