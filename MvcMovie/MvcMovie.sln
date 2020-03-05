@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MegaDesk", "MegaDesk.csproj", "{5596ECB0-779B-40F2-A3E7-8B2166675DD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie.csproj", "{8F147FA7-A291-46A7-AC80-43087C9DBD5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5596ECB0-779B-40F2-A3E7-8B2166675DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5596ECB0-779B-40F2-A3E7-8B2166675DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5596ECB0-779B-40F2-A3E7-8B2166675DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5596ECB0-779B-40F2-A3E7-8B2166675DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F147FA7-A291-46A7-AC80-43087C9DBD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F147FA7-A291-46A7-AC80-43087C9DBD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F147FA7-A291-46A7-AC80-43087C9DBD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F147FA7-A291-46A7-AC80-43087C9DBD5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {270DEE3C-9CE2-4F2E-95D3-B7EC0A3B20B8}
+		SolutionGuid = {FF73A362-CF60-4DB2-B30F-6957710A6004}
 	EndGlobalSection
 EndGlobal
